@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing page e-commerce con offerte esclusive. Acquista ora e risparmia fino al 50%! Spedizione gratuita e supporto 24/7.">
+    <meta name="keywords" content="e-commerce, shopping online, offerte, landing page, bootstrap">
+    <title>E-Commerce Landing Page</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icona Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* Personalizzazione delle animazioni */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+            display: none;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .cart-overlay.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar con barra di ricerca e icona del carrello -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Brand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categorie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-cart" id="cart-icon"></i> Cart <span id="cart-count" class="badge bg-primary">0</span></a>
+                    </li>
+                </ul>
+                <!-- Barra di ricerca -->
+                <form class="d-flex ms-3">
+                    <input class="form-control me-2" type="search"
+                    placeholder="Cerca i prodotti..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Cerca</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section con animazione -->
+    <section class="bg-primary text-white text-center p-5">
+        <div class="container fade-in" id="hero">
+            <h1>Offerta esclusiva: fino al 50% di sconto!</h1>
+            <p class="lead"> Acquista ora e goditi sconti enormi sui nostri migliori prodotti.</p>
+            <a href="#" class="btn btn-light btn-lg">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Sezione Categorie -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Acquista per categorie</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="category1.jpg" class="card-img-top lazyload" alt="Category 1 - Electronics">
+                        <div class="card-body">
+                            <h5 class="card-title">Elettronica</h5>
+                            <a href="#" class="btn btn-primary">Esplora</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="category2.jpg" class="card-img-top lazyload" alt="Category 2 - Fashion">
+                        <div class="card-body">
+                            <h5 class="card-title">Fashion</h5>
+                            <a href="#" class="btn btn-primary">Esplora</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="category3.jpg" class="card-img-top lazyload" alt="Category 3 - Home Appliances">
+                        <div class="card-body">
+                            <h5 class="card-title">Casalinghi</h5>
+                            <a href="#" class="btn btn-primary">Esplora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prodotti in evidenza -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Products</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 fade-in" id="product1">
+                    <div class="card">
+                        <img src="product1.jpg" class="card-img-top lazyload" alt="Product 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 1</h5>
+                            <p class="card-text">€49.99 - High quality and affordable.</p>
+                            <button class="btn btn-primary add-to-cart" data-name="Product 1" data-price="49.99">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 fade-in" id="product2">
+                    <div class="card">
+                        <img src="product2.jpg" class="card-img-top lazyload" alt="Product 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 2</h5>
+                            <p class="card-text">€29.99 - Best selling product.</p>
+                            <button class="btn btn-primary add-to-cart" data-name="Product 2" data-price="29.99">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 fade-in" id="product3">
+                    <div class="card">
+                        <img src="product3.jpg" class="card-img-top lazyload" alt="Product 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 3</h5>
+                            <p class="card-text">€19.99 - Limited stock available!</p>
+                            <button class="btn btn-primary add-to-cart" data-name="Product 3" data-price="19.99">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrello -->
+    <div class="cart-overlay" id="cart-overlay">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <h4>Total: €<span id="cart-total">0.00</span></h4>
+        <a href="checkout.html" class="btn btn-success">Checkout</a>
+        <button class="btn btn-danger" id="clear-cart">Clear Cart</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 ShopName. All Rights Reserved.<br></p>
+          <a
+          href="https://www.linkedin.com/in/roberto-celano?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank" style="color:white;">Roberto
+          Celano</a>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript per la gestione del carrello -->
+    <script>
+        let cart = [];
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const cartIcon = document.getElementById('cart-icon');
+        const cartCount = document.getElementById('cart-count');
+        const clearCartButton = document.getElementById('clear-cart');
+
+        // Funzione per aggiornare il carrello
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                cartItems.innerHTML += `
+                    <li>
+                        ${item.name} - €${item.price.toFixed(2)} x ${item.quantity}
+                        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
+                    </li>
+                `;
+            });
+            cartTotal.innerText = total.toFixed(2);
+            cartCount.innerText = cart.length;
+        }
+
+        // Aggiungi prodotto al carrello
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const name = e.target.getAttribute('data-name');
+                const price = parseFloat(e.target.getAttribute('data-price'));
+
+                const existingProduct = cart.find(item => item.name === name);
+
+                if (existingProduct) {
+                    existingProduct.quantity++;
+                } else {
+                    cart.push({ name, price, quantity: 1 });
+                }
+
+                updateCart();
+                localStorage.setItem('cart', JSON.stringify(cart));  // Salva nel localStorage
+            });
+        });
+
+        // Rimuovi prodotto dal carrello
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Pulisci il carrello
+        clearCartButton.addEventListener('click', () => {
+            cart = [];
+            updateCart();
+            localStorage.removeItem('cart');
+        });
+
+        // Mostra/Nascondi carrello
+        cartIcon.addEventListener('click', () => {
+            cartOverlay.classList.toggle('show');
+        });
+
+        // Ricarica carrello da localStorage se presente
+        window.addEventListener('load', () => {
+            const savedCart = JSON.parse(localStorage.getItem('cart'));
+            if (savedCart) {
+                cart = savedCart;
+                updateCart();
+            }
+        });
+
+        // Funzione per far apparire gli elementi al scroll
+        function fadeInOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= window.innerHeight - 100) {
+                    el.classList.add('show');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);  // Attiva animazioni anche al caricamento
+    </script>
+
+</body>
+</html>
