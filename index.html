@@ -40,6 +40,9 @@
             display: block;
         }
     </style>
+        <!-- File CSS personalizzato -->
+    <link rel="stylesheet" href="styles.css">
+</head>
 </head>
 <body>
 
@@ -123,7 +126,7 @@
     <!-- Prodotti in evidenza -->
     <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Featured Products</h2>
+            <h2 class="text-center mb-4">Prodotti in evidenza</h2>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4 fade-in" id="product1">
                     <div class="card">
@@ -161,6 +164,8 @@
 
     <!-- Carrello -->
     <div class="cart-overlay" id="cart-overlay">
+         <button class="btn btn-secondary float-end"
+         id="close-cart">X</button> <!-- Pulsante per chiudere la tendina-->
         <h3>Your Cart</h3>
         <ul id="cart-items"></ul>
         <h4>Total: €<span id="cart-total">0.00</span></h4>
@@ -253,6 +258,11 @@ cart.forEach((item, index) => {
                 updateCart();
             }
         });
+        
+// Funzione per chiudere il carrello quando si clicca su "Close"
+document.getElementById('close-cart').addEventListener('click', () => {
+    cartOverlay.classList.remove('show');
+});
 
         // Funzione per far apparire gli elementi al scroll
         function fadeInOnScroll() {
