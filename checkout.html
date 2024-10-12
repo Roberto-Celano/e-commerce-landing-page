@@ -6,13 +6,18 @@
     <title>Checkout - ShopName</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Icona Bootstrap -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- File CSS personalizzato -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">ShopName</a>
+            <a class="navbar-brand" href="#"><i class="bi bi-cart4"></i> CLICK&BUY</a>
         </div>
     </nav>
 
@@ -24,28 +29,39 @@
                 <div class="col-md-8">
                     <form>
                         <div class="mb-3">
-                            <label for="name" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="name"
+                            placeholder="Inserisci il tuo nome" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                            <label for="surname" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="surname"
+                            placeholder="Inserisci il tuo cognome" required>
                         </div>
                         <div class="mb-3">
-                            <label for="address" class="form-label">Shipping Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                            <label for="email" class="form-label">Email </label>
+                            <input type="email" class="form-control" id="email"
+                            placeholder="nome@esempio.com" required>
                         </div>
                         <div class="mb-3">
-                            <label for="card" class="form-label">Card Details</label>
+                            <label for="address" class="form-label">Indirizzo di
+                            spedizione</label>
+                            <input type="text" class="form-control" id="address"
+                            placeholder="Inserisci il tuo indirizzo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="card" class="form-label">Dettagli della
+                            carta</label>
                             <input type="text" class="form-control" id="card" placeholder="XXXX-XXXX-XXXX-XXXX" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Place Order</button>
+                        <button type="submit" class="btn btn-primary mb-3">Effettua
+                        ordine</button>
                     </form>
                 </div>
                 <div class="col-md-4">
-                    <h4>Your Order</h4>
+                    <h4>Il tuo ordine</h4>
                     <ul id="order-summary"></ul>
-                    <h5>Total: $<span id="order-total">0.00</span></h5>
+                    <h5>Totale: €<span id="order-total">0.00</span></h5>
                 </div>
             </div>
         </div>
@@ -65,11 +81,11 @@
                 let total = 0;
                 savedCart.forEach(item => {
                     total += item.price * item.quantity;
-                    orderSummary.innerHTML += `<li>${item.name} - $${item.price.toFixed(2)} x ${item.quantity}</li>`;
+                    orderSummary.innerHTML += `<li>${item.name} - €${item.price.toFixed(2)} x ${item.quantity}</li>`;
                 });
                 orderTotal.innerText = total.toFixed(2);
             } else {
-                orderSummary.innerHTML = '<li>No items in cart.</li>';
+                orderSummary.innerHTML = '<li>Nessun prodotto inserito.</li>';
             }
         });
     </script>

@@ -1,7 +1,14 @@
+
 /* Imposta il font e i colori globali */
+:root{
+ --background--:#FFFEEF;
+ --navbar--: #dabdab;
+ --footer--: #031F63;
+}
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
+    background-color: var(--background--);
 }
 
 /* Hero section styling */
@@ -24,9 +31,12 @@ body {
 
 /* Navbar custom styles */
 .navbar {
-    background-color: #fff;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+   background-color: #ebbd30;
+    box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.2);
 }
+
+.navbar a{
+ color: black;
 
 .navbar-brand {
     font-size: 1.5rem;
@@ -34,10 +44,11 @@ body {
 }
 
 /* Button styling */
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+#btn-hero {
+    background-color: #1E2A5E;
+    border-color: #004085;
     transition: background-color 0.3s;
+    box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.9);
 }
 
 .btn-primary:hover {
@@ -46,12 +57,6 @@ body {
 }
 
 /* Cart overlay */
-.cart-overlay {
- background-color: red;
-    border-left: 1px solid #ddd;
-    padding: 20px;
-}
-
 #cart-items li {
     margin-bottom: 10px;
     list-style-type: none;

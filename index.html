@@ -25,9 +25,9 @@
 
         .cart-overlay {
             position: fixed;
-            top: 0;
+            top: 300px;
             right: 0;
-            width: 300px;
+            width: 320px;
             height: 100%;
             background-color: white;
             box-shadow: -2px 0 5px rgba(0,0,0,0.2);
@@ -41,15 +41,15 @@
         }
     </style>
         <!-- File CSS personalizzato -->
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navbar con barra di ricerca e icona del carrello -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#"><i class="bi
+            bi-cart4"></i>CLICK&BUY</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -64,8 +64,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Categorie</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-cart" id="cart-icon"></i> Cart <span id="cart-count" class="badge bg-primary">0</span></a>
+                    <li class="nav-item mb-3">
+                        <a class="nav-link" href="#"><i class="bi bi-cart"
+                        id="cart-icon"> Carrello </i> <span id="cart-count" class="badge
+                        bg-primary">0</span></a>
                     </li>
                 </ul>
                 <!-- Barra di ricerca -->
@@ -79,11 +81,11 @@
     </nav>
 
     <!-- Hero Section con animazione -->
-    <section class="bg-primary text-white text-center p-5">
+    <section class="text-white text-center pt-5 pb-3 px-3 bg-danger" id="hero">
         <div class="container fade-in" id="hero">
             <h1>Offerta esclusiva: fino al 50% di sconto!</h1>
             <p class="lead"> Acquista ora e goditi sconti enormi sui nostri migliori prodotti.</p>
-            <a href="#" class="btn btn-light btn-lg">Shop Now</a>
+            <a href="#" class="btn btn-light btn-lg" id="btn-hero">Acquista ora</a>
         </div>
     </section>
 
@@ -94,28 +96,31 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="category1.jpg" class="card-img-top lazyload" alt="Category 1 - Electronics">
+                        <img src="img/card1.jpg" class="card-img-top lazyload"
+                        alt="Category 1 - Electronics">
                         <div class="card-body">
                             <h5 class="card-title">Elettronica</h5>
-                            <a href="#" class="btn btn-primary">Esplora</a>
+                            <a href="#" class="btn btn-outline-success">Esplora</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="category2.jpg" class="card-img-top lazyload" alt="Category 2 - Fashion">
+                        <img src="img/card2.jpg" class="card-img-top lazyload"
+                        alt="Category 2 - Fashion">
                         <div class="card-body">
                             <h5 class="card-title">Fashion</h5>
-                            <a href="#" class="btn btn-primary">Esplora</a>
+                            <a href="#" class="btn btn-outline-success">Esplora</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card">
-                        <img src="category3.jpg" class="card-img-top lazyload" alt="Category 3 - Home Appliances">
+                        <img src="img/card3.jpg" class="card-img-top lazyload"
+                        alt="Category 3 - Home Appliances">
                         <div class="card-body">
                             <h5 class="card-title">Casalinghi</h5>
-                            <a href="#" class="btn btn-primary">Esplora</a>
+                            <a href="#" class="btn btn-outline-success">Esplora</a>
                         </div>
                     </div>
                 </div>
@@ -130,31 +135,41 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4 fade-in" id="product1">
                     <div class="card">
-                        <img src="product1.jpg" class="card-img-top lazyload" alt="Product 1">
+                        <img src="img/prod1.jpg" class="card-img-top lazyload"
+                        alt="Scarpe da corsa">
                         <div class="card-body">
-                            <h5 class="card-title">Product 1</h5>
-                            <p class="card-text">€49.99 - High quality and affordable.</p>
-                            <button class="btn btn-primary add-to-cart" data-name="Product 1" data-price="49.99">Buy Now</button>
+                            <h5 class="card-title">Scarpe da corsa</h5>
+                            <p class="card-text">€49.99 - Qualità e affidabilità.</p>
+                            <button class="btn btn-outline-success add-to-cart"
+                            data-name="Scarpe da corsa" data-price="49.99">Aggiungi al
+                            carrello</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 fade-in" id="product2">
                     <div class="card">
-                        <img src="product2.jpg" class="card-img-top lazyload" alt="Product 2">
+                        <img src="img/prod3.jpg" class="card-img-top lazyload"
+                        alt="Bilancia elettronica">
                         <div class="card-body">
-                            <h5 class="card-title">Product 2</h5>
-                            <p class="card-text">€29.99 - Best selling product.</p>
-                            <button class="btn btn-primary add-to-cart" data-name="Product 2" data-price="29.99">Buy Now</button>
+                            <h5 class="card-title">Bilancia elettronica</h5>
+                            <p class="card-text">€29.99 - Miglior prodotto.</p>
+                            <button class="btn btn-outline-success add-to-cart"
+                            data-name="Bilancia elettronica" data-price="29.99">Aggiungi al
+                            carrello</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 fade-in" id="product3">
                     <div class="card">
-                        <img src="product3.jpg" class="card-img-top lazyload" alt="Product 3">
+                        <img src="img/prod2.jpg" class="card-img-top lazyload"
+                        alt="Rossetto rosso">
                         <div class="card-body">
-                            <h5 class="card-title">Product 3</h5>
-                            <p class="card-text">€19.99 - Limited stock available!</p>
-                            <button class="btn btn-primary add-to-cart" data-name="Product 3" data-price="19.99">Buy Now</button>
+                            <h5 class="card-title">Rossetto rosso</h5>
+                            <p class="card-text">€19.99 - Disponibilitá
+                            limitata!</p>
+                            <button class="btn btn-outline-success add-to-cart"
+                            data-name="Rossetto rosso" data-price="19.99">Aggiungi al
+                            carrello</button>
                         </div>
                     </div>
                 </div>
@@ -164,17 +179,17 @@
 
     <!-- Carrello -->
     <div class="cart-overlay" id="cart-overlay">
-         <button class="btn btn-secondary float-end"
+         <button class="btn btn-outline-secndary float-end"
          id="close-cart">X</button> <!-- Pulsante per chiudere la tendina-->
-        <h3>Your Cart</h3>
+        <h3>Il tuo carrello</h3>
         <ul id="cart-items"></ul>
-        <h4>Total: €<span id="cart-total">0.00</span></h4>
+        <h4>Totale: €<span id="cart-total">0.00</span></h4>
         <a href="checkout.html" class="btn btn-success">Checkout</a>
-        <button class="btn btn-danger" id="clear-cart">Clear Cart</button>
+        <button class="btn btn-danger" id="clear-cart">Svuota carrello</button>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="text-white text-center py-3 bg-secondary" id="foot">
         <p>&copy; 2024 ShopName. All Rights Reserved.<br></p>
           <a
           href="https://www.linkedin.com/in/roberto-celano?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
@@ -204,7 +219,8 @@ cart.forEach((item, index) => {
                 cartItems.innerHTML += `
                     <li>
                         ${item.name} - €${item.price.toFixed(2)} x ${item.quantity}
-                        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
+                        <button class="btn btn-sm btn-danger"
+                        onclick="removeFromCart(${index})">Rimuovi</button>
                     </li>
                 `;
             });
