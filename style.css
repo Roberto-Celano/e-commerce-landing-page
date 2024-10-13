@@ -1,10 +1,6 @@
 
 /* Imposta il font e i colori globali */
-:root{
- --background--:#FFFEEF;
- --navbar--: #dabdab;
- --footer--: #031F63;
-}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -83,4 +79,18 @@ body {
 
 .lazyloaded {
     opacity: 1;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0; /* Corregge la posizione dall'alto */
+    right: 0;
+    width: 320px;
+    height: 100vh; /* Usa 100% della vista verticale */
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    display: none; /* Mantiene nascosto finché non viene attivato */
+    padding: 20px;
+    z-index: 1000; /* Mantiene il carrello sopra gli altri elementi */
+    overflow-y: auto; /* Aggiunge una barra di scorrimento se necessario */
 }

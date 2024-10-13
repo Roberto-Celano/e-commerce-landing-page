@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- Set di caratteri e compatibilità con i dispositivi mobili -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Descrizione e parole chiave per SEO -->
     <meta name="description" content="Landing page e-commerce con offerte esclusive. Acquista ora e risparmia fino al 50%! Spedizione gratuita e supporto 24/7.">
     <meta name="keywords" content="e-commerce, shopping online, offerte, landing page, bootstrap">
+    
+    <!-- Meta tag autore -->
+    <meta name="author" content="Roberto Celano">
+    
+    <!-- SEO per social media (Open Graph e Twitter Cards) -->
+    <meta property="og:title" content="E-Commerce Landing Page">
+    <meta property="og:description" content="Offerte esclusive fino al 50%! Spedizione gratuita e supporto 24/7.">
+    <meta property="og:image" content="https://www.tuosito.com/immagine-di-anteprima.jpg"> <!-- Aggiorna l'URL dell'immagine -->
+    <meta property="og:url" content="https://www.tuosito.com">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="E-Commerce Landing Page">
+    <meta name="twitter:description" content="Offerte esclusive fino al 50%! Spedizione gratuita e supporto 24/7.">
+    <meta name="twitter:image" content="https://www.tuosito.com/immagine-di-anteprima.jpg"> <!-- Aggiorna l'URL dell'immagine -->
+
+    <!-- Tag per la verifica con Google Search Console (facoltativo) -->
+    <!-- <meta name="google-site-verification" content="CODICE_DI_VERIFICA"> -->
+
+    <!-- Titolo della pagina -->
     <title>E-Commerce Landing Page</title>
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Icona Bootstrap -->
+
+    <!-- Icone Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <style>
+     <style>
         /* Personalizzazione delle animazioni */
         .fade-in {
             opacity: 0;
@@ -40,7 +65,8 @@
             display: block;
         }
     </style>
-        <!-- File CSS personalizzato -->
+
+    <!-- CSS Esterno -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -70,12 +96,6 @@
                         bg-primary">0</span></a>
                     </li>
                 </ul>
-                <!-- Barra di ricerca -->
-                <form class="d-flex ms-3">
-                    <input class="form-control me-2" type="search"
-                    placeholder="Cerca i prodotti..." aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Cerca</button>
-                </form>
             </div>
         </div>
     </nav>
@@ -85,7 +105,7 @@
         <div class="container fade-in" id="hero">
             <h1>Offerta esclusiva: fino al 50% di sconto!</h1>
             <p class="lead"> Acquista ora e goditi sconti enormi sui nostri migliori prodotti.</p>
-            <a href="#" class="btn btn-light btn-lg" id="btn-hero">Acquista ora</a>
+            <a href="#" class="btn btn-primary btn-lg" id="btn-hero">Acquista ora</a>
         </div>
     </section>
 
