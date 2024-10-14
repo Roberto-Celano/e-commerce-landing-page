@@ -4,25 +4,40 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
-    background-color: var(--background--);
+    background-color: #f6f0b1;
 }
 
 /* Hero section styling */
-#hero {
-    background-image: url('hero-bg.jpg');  /* Sostituisci con l'immagine desiderata */
+#hero-content {
+    background-image: url('img/hero.jpg');  /* Sostituisci con l'immagine desiderata */
     background-size: cover;
-    background-position: center;
-    padding: 100px 0;
-    color: white;
+   background-repeat: no-repeat;
+   background-position: center;
+   width:100%;
+
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Nero con 50% di trasparenza */
+  z-index: -1; /* Posiziona l'overlay sotto il contenuto */
 }
 
 #hero h1 {
+    color:darkgreen;
     font-size: 3.5rem;
     font-weight: bold;
+    z-index:2;
 }
 
 #hero p {
+ color:seagreen;
     font-size: 1.25rem;
+    font-weight: bolder;
+    z-index:2;
 }
 
 /* Navbar custom styles */
@@ -79,18 +94,4 @@ body {
 
 .lazyloaded {
     opacity: 1;
-}
-
-.cart-overlay {
-    position: fixed;
-    top: 0; /* Corregge la posizione dall'alto */
-    right: 0;
-    width: 320px;
-    height: 100vh; /* Usa 100% della vista verticale */
-    background-color: white;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-    display: none; /* Mantiene nascosto finché non viene attivato */
-    padding: 20px;
-    z-index: 1000; /* Mantiene il carrello sopra gli altri elementi */
-    overflow-y: auto; /* Aggiunge una barra di scorrimento se necessario */
 }
