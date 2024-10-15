@@ -21,12 +21,6 @@ Puoi visualizzare il progetto in funzione visitando questo link:
 - Pulsanti "Aggiungi al carrello" con integrazione JavaScript.
 - Pulsante "Torna su" per migliorare la navigazione.
 
-## Screenshot
-
-![Screenshot della landing page](https://roberto-celano.github.io/landing-page-e-commerce-BS5/screenshot.png)
-
-> Puoi includere uno screenshot della landing page qui. Carica l'immagine nella repository o utilizza un URL esterno.
-
 ## Come Installare e Usare il Progetto
 
 1. Clona la repository:
