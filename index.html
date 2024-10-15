@@ -76,10 +76,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid py-3 py-lg-2">
             <a class="navbar-brand ps-2 mt-1" href="#"><h3><i class="bi bi-cart4"></i>CLICK&BUY</h3></a>
+             <a class="nav-link d-lg-none position-relative ms-5" href="#"><i
+             class="bi bi-bag"
+                        id="cart-icon"></i> <span id="cart-count" class="badge
+                        bg-primary">0</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse mt-2" id="navbarNav">
+                    
+            <div class="collapse navbar-collapse mt-3" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-sm-0 me-md-2">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
@@ -90,8 +95,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#categorie">Categorie</a>
                     </li>
-                    <li class="nav-item mb-3">
-                        <a class="nav-link" href="#"><i class="bi bi-cart"
+                    <li class="nav-item mb-3 d-none d-lg-block">
+                        <a class="nav-link" href="#"><i class="bi bi-bag"
                         id="cart-icon"> Carrello </i> <span id="cart-count" class="badge
                         bg-primary">0</span></a>
                     </li>
@@ -110,9 +115,8 @@
     </div>
 </section>
     <!-- Sezione Categorie -->
-    <section class="py-5">
+    <section class="py-5 target" id="categorie">
         <div class="container">
-         <a id="categorie"></a>
             <h2 class="text-center mb-4">Acquista per categorie</h2>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -150,9 +154,7 @@
     </section>
 
     <!-- Prodotti in evidenza -->
-     
-    <section class="py-5">
-     <a id="shop" style="margin-top:-100px; padding-top:100px;"></a>
+    <section class="py-5 target" id="shop">
         <div class="container">
             <h2 class="text-center mb-4">Prodotti in evidenza</h2>
             <div class="row">
@@ -219,104 +221,9 @@
           target="_blank" style="color:white;">Roberto
           Celano</a>
     </footer>
-
+<button id="backToTop" class="btn btn-primary"><i class="bi bi-arrow-up"></i></button>
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- JavaScript per la gestione del carrello -->
-    <script>
-        let cart = [];
-        const cartOverlay = document.getElementById('cart-overlay');
-        const cartItems = document.getElementById('cart-items');
-        const cartTotal = document.getElementById('cart-total');
-        const cartIcon = document.getElementById('cart-icon');
-        const cartCount = document.getElementById('cart-count');
-        const clearCartButton = document.getElementById('clear-cart');
-
-        // Funzione per aggiornare il carrello
-        function updateCart() {
-            cartItems.innerHTML = '';
-            let total = 0;
-cart.forEach((item, index) => {
-                total += item.price * item.quantity;
-                cartItems.innerHTML += `
-                    <li class="mt-2"><b>
-                        ${item.name}</b> - €${item.price.toFixed(2)} x ${item.quantity}
-                        <button class="btn btn-sm btn-danger mt-1"
-                        onclick="removeFromCart(${index})">Rimuovi</button>
-                    </li>
-                `;
-            });
-            cartTotal.innerText = total.toFixed(2);
-            cartCount.innerText = cart.length;
-        }
-
-        // Aggiungi prodotto al carrello
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const name = e.target.getAttribute('data-name');
-                const price = parseFloat(e.target.getAttribute('data-price'));
-
-                const existingProduct = cart.find(item => item.name === name);
-
-                if (existingProduct) {
-                    existingProduct.quantity++;
-                } else {
-                    cart.push({ name, price, quantity: 1 });
-                }
-
-                updateCart();
-                localStorage.setItem('cart', JSON.stringify(cart));  // Salva nel localStorage
-            });
-        });
-
-        // Rimuovi prodotto dal carrello
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCart();
-            localStorage.setItem('cart', JSON.stringify(cart));
-        }
-
-        // Pulisci il carrello
-        clearCartButton.addEventListener('click', () => {
-            cart = [];
-            updateCart();
-            localStorage.removeItem('cart');
-        });
-
-        // Mostra/Nascondi carrello
-        cartIcon.addEventListener('click', () => {
-            cartOverlay.classList.toggle('show');
-        });
-
-        // Ricarica carrello da localStorage se presente
-        window.addEventListener('load', () => {
-            const savedCart = JSON.parse(localStorage.getItem('cart'));
-            if (savedCart) {
-                cart = savedCart;
-                updateCart();
-            }
-        });
-        
-// Funzione per chiudere il carrello quando si clicca su "Close"
-document.getElementById('close-cart').addEventListener('click', () => {
-    cartOverlay.classList.remove('show');
-});
-
-        // Funzione per far apparire gli elementi al scroll
-        function fadeInOnScroll() {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top <= window.innerHeight - 100) {
-                    el.classList.add('show');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', fadeInOnScroll);
-        window.addEventListener('load', fadeInOnScroll);  // Attiva animazioni anche al caricamento
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

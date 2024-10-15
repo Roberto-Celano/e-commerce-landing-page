@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - ShopName</title>
+    <title>Checkout - Click&Buy</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
      <!-- Icona Bootstrap -->
@@ -37,8 +37,8 @@
     </nav>
 
     <!-- Sezione di Checkout -->
-    <section class="py-5">
-        <div class="container">
+    <section class="py-5 mt-4">
+        <div class="container mt-5">
             <h2 class="text-center mb-4">Checkout</h2>
             <div class="row">
                 <div class="col-md-8">
@@ -73,7 +73,7 @@
                         ordine</button>
                     </form>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mt-3">
                     <h4>Il tuo ordine</h4>
                     <ul id="order-summary"></ul>
                     <h5>Totale: €<span id="order-total">0.00</span></h5>
@@ -84,26 +84,6 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        const orderSummary = document.getElementById('order-summary');
-        const orderTotal = document.getElementById('order-total');
-
-        // Ricarica carrello da localStorage e visualizza i dettagli
-        window.addEventListener('load', () => {
-            const savedCart = JSON.parse(localStorage.getItem('cart'));
-            if (savedCart && savedCart.length > 0) {
-                let total = 0;
-                savedCart.forEach(item => {
-                    total += item.price * item.quantity;
-                    orderSummary.innerHTML += `<li>${item.name} - €${item.price.toFixed(2)} x ${item.quantity}</li>`;
-                });
-                orderTotal.innerText = total.toFixed(2);
-            } else {
-                orderSummary.innerHTML = '<li>Nessun prodotto inserito.</li>';
-            }
-        });
-    </script>
-
+     <script src="script.js"></script>
 </body>
 </html>
