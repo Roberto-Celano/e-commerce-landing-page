@@ -55,7 +55,7 @@
             width: 320px;
             height: 100%;
             border-top-left-radius:30px;
-            background-color: #f3f9e1;
+            background-color: snow;
             box-shadow: -2px 0 5px rgba(0,0,0,0.2);
             display: none;
             padding: 20px;
@@ -73,10 +73,9 @@
 <body>
 
     <!-- Navbar con barra di ricerca e icona del carrello -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid py-3 py-lg-2">
-            <a class="navbar-brand ps-2 mt-1" href="#"><h3><i class="bi
-            bi-cart4"></i>CLICK&BUY</h3></a>
+            <a class="navbar-brand ps-2 mt-1" href="#"><h3><i class="bi bi-cart4"></i>CLICK&BUY</h3></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -86,10 +85,10 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
+                        <a class="nav-link" href="#shop">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categorie</a>
+                        <a class="nav-link" href="#categorie">Categorie</a>
                     </li>
                     <li class="nav-item mb-3">
                         <a class="nav-link" href="#"><i class="bi bi-cart"
@@ -102,18 +101,18 @@
     </nav>
 
     <!-- Hero Section con animazione -->
-    <section id="hero">
-        <div class="container fade-in mt-5 py-5 mx-0 px-0" id="hero-content">
-         <div class="overlay"></div>
-            <h1>Offerta esclusiva: fino al 50% di sconto!</h1>
-            <p class="lead"> Acquista ora e goditi sconti enormi sui nostri migliori prodotti.</p>
-            <a href="#" class="btn btn-danger btn-lg" id="btn-hero">Acquista ora</a>
-        </div>
-    </section>
-
+<section id="hero">
+ <div class="overlay"></div> <!-- Overlay posizionato correttamente qui -->
+    <div class="container text-center" id="hero-content">
+        <h1>Offerta esclusiva: fino al 50% di sconto!</h1>
+        <p class="lead">Acquista ora e goditi sconti enormi sui nostri migliori prodotti.</p>
+        <button class="btn btn-lg btn-danger mb-5" id="btn-hero">Acquista ora</button>
+    </div>
+</section>
     <!-- Sezione Categorie -->
     <section class="py-5">
         <div class="container">
+         <a id="categorie"></a>
             <h2 class="text-center mb-4">Acquista per categorie</h2>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -151,7 +150,9 @@
     </section>
 
     <!-- Prodotti in evidenza -->
+     
     <section class="py-5">
+     <a id="shop" style="margin-top:-100px; padding-top:100px;"></a>
         <div class="container">
             <h2 class="text-center mb-4">Prodotti in evidenza</h2>
             <div class="row">
