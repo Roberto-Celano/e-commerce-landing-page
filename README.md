@@ -12,7 +12,7 @@ Una landing page fittizia per un progetto e-commerce, progettata per dimostrare 
 ---
 
 ## 📸 Demo Live
-[Visualizza il progetto in funzione → Click&Buy Demo](https://roberto-celano.github.io/landing-page-e-commerce-BS5/)
+[Visualizza il progetto in funzione → Click&Buy Demo](https://roberto-celano.github.io/e-commerce-landing-page/)
 
 ---
 
