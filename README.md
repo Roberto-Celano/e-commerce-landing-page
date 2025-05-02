@@ -77,7 +77,7 @@ Apri una pull request o segnala un problema nella sezione Issues.
 
 ## ⚖️ Licenza
 Questo progetto è distribuito sotto licenza MIT.
-Consulta il file [LICENSE.md] per maggiori dettagli.
+Consulta il file **LICENSE.md** per maggiori dettagli.
 
 ---
 
