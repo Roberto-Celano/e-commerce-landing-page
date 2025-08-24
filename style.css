@@ -42,7 +42,6 @@ body {
     top: 0;
 }
 
-/* Correzione: Chiudi la regola .navbar a */
 .navbar a {
     color: white;
     text-decoration: none;
