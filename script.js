@@ -62,7 +62,7 @@ cart.forEach((item, index) => {
             cartOverlay.classList.toggle('show');
         });
 
-        // Ricarica carrello da localStorage se presente
+        // Ricarica carrello da localStorage
         window.addEventListener('load', () => {
             const savedCart = JSON.parse(localStorage.getItem('cart'));
             if (savedCart) {
